@@ -1,0 +1,23 @@
+menu "Example Configuration"
+
+    config MQTT_HOSTNAME
+        string "URI of mqtt broker"
+        default "mqtt://[2001:db8:1:1:42:acff:fe11:3]:1883"
+        help
+            mDNS Hostname for example to use
+
+    choice
+        bool "IPv6 configuration"
+        default IPV6_GLOBAL_AUTOCONFIG
+        help
+            IPv6 configuration
+
+        config IPV6_GLOBAL_AUTOCONFIG
+            bool "IPV6_GLOBAL_AUTOCONFIG"
+        config IPV6_RA_RDNSS
+            bool "IPV6_RA_RDNSS"
+        config IPV6_DHCP6_OTHER_FLAG
+            bool "IPV6_DHCP6_OTHER_FLAG"
+    endchoice
+
+endmenu
